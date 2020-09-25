@@ -1,0 +1,34 @@
+.chatbox-wrapper {
+    width: 110vh;
+    height: 70vh;
+    border: .3vh solid black;
+    margin: auto;
+    /* padding: 10px; */
+    margin-top: 10%;
+}
+.chatbox-container {
+
+}
+.chatbox-up {
+    height: 8vh;
+    border-bottom: .3vh solid green;
+}
+.chatbox-down {
+    display: flex;
+    
+}
+.chatbox-left {
+    width: 30vh;
+    height: 62vh;
+    border-right: .3vh solid red;
+}
+.chatbox-right-up{
+    width: 80vh;
+    height: 55vh;
+    border-bottom: .3vh solid black;
+}
+.chatbox-right-down {
+    width: 80vh;
+    height: 15vh;
+
+}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ChatBox from './ChatBox';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 let socket;
@@ -28,7 +29,7 @@ const Chat = ({ location }) => {
 
     useEffect(() => {
         socket.on('message', (message) => {
-            setMessage([...messages, message])
+            setMessages([...messages, message])
         })
     },[messages]);
 
@@ -43,15 +44,15 @@ const Chat = ({ location }) => {
     console.log(message, messages)
     return(
         <div className="outer-container">
-            <div className="container">
+            {/* <div className="container">
                 <input 
                     value={message} 
                     onChange={event => setMessage(event.target.value)}
                     onKeyPress={event => event.key === 'Enter' ? sendMessage(event): null}
                     />
 
-            </div>
-            
+            </div> */}
+            <ChatBox />
         </div>
     )
 }
