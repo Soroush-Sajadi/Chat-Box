@@ -10,6 +10,9 @@ const Chat = ({ location }) => {
     const [ messages, setMessages ] = useState([]);
     const ENDPOINT = 'localhost:5000';
 
+    const getNewMessage = (childData) => {
+        setMessage(childData);
+    }
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
         socket = io(ENDPOINT)
@@ -31,17 +34,19 @@ const Chat = ({ location }) => {
         socket.on('message', (message) => {
             setMessages([...messages, message])
         })
-    },[messages]);
+    },[messages, message]);
 
-    const sendMessage = (event) => {
-        event.preventDefault();
-
+    useEffect(() => {
         if (message) {
             socket.emit('sendMessage' , message, () => setMessage(''))
-            
         }
-    }
-    console.log(message, messages)
+    },[message])
+
+    // const sendMessage = (event) => {
+    //     event.preventDefault();
+
+        
+    // }
     return(
         <div className="outer-container">
             {/* <div className="container">
@@ -52,7 +57,7 @@ const Chat = ({ location }) => {
                     />
 
             </div> */}
-            <ChatBox />
+            <ChatBox message={message} messages={messages} getNewMessage={getNewMessage} />
         </div>
     )
 }

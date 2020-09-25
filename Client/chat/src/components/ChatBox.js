@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ChatBox.css';
 
-const ChatBox = () => {
+const ChatBox = ({message, messages, getNewMessage}) => {
+    const [ newMesageText, setNewMessageText ] = useState('')
+
+    const sendMessage = (event) => {
+        event.preventDefault();
+        getNewMessage(newMesageText)
+        setNewMessageText('')
+    }
     return(
         <div className="chatbox-wrapper">
             <div className="chatbox-container">
@@ -17,7 +24,14 @@ const ChatBox = () => {
 
                         </div>
                         <div className="chatbox-right-down">
-                            <input  type="text" placeholder="Write message..." onChange={event => event.target.value}/>
+                            <input
+                                type="text"
+                                value={newMesageText}
+                                placeholder="Write message..."
+                                onChange={event => setNewMessageText(event.target.value)}
+                                onKeyPress={event => event.key === 'Enter' ? sendMessage(event): null}
+                                />
+                                
                         </div>
                     </div>
                 </div>
