@@ -8,6 +8,8 @@ const Chat = ({ location }) => {
     const [ room, setRoom ] = useState('');
     const [ message, setMessage ] = useState('');
     const [ messages, setMessages ] = useState([]);
+    const [ member, setMember ] = useState('')
+    const [ members, setMembers ] = useState([]);
     const ENDPOINT = 'localhost:5000';
 
     const getNewMessage = (childData) => {
@@ -19,9 +21,8 @@ const Chat = ({ location }) => {
 
         setName(name);
         setRoom(room);
-
+        
         socket.emit('join', { name, room }, () => {
-
         });
 
         return () => {
@@ -37,6 +38,18 @@ const Chat = ({ location }) => {
     },[messages, message]);
 
     useEffect(() => {
+        socket.on('members', (members) => {
+            setMembers(members)
+        })
+    },[members]);
+
+    // useEffect(() => {
+    //     socket.on('member', (member) => {
+    //         setMembers([...members, member])
+    //     })
+    // })
+
+    useEffect(() => {
         if (message) {
             socket.emit('sendMessage' , message, () => setMessage(''))
         }
@@ -47,6 +60,7 @@ const Chat = ({ location }) => {
 
         
     // }
+    console.log(members)
     return(
         <div className="outer-container">
             {/* <div className="container">

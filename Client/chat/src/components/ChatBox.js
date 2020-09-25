@@ -9,6 +9,7 @@ const ChatBox = ({message, messages, getNewMessage}) => {
         getNewMessage(newMesageText)
         setNewMessageText('')
     }
+    // console.log(messages)
     return(
         <div className="chatbox-wrapper">
             <div className="chatbox-container">
