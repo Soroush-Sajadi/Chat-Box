@@ -10,7 +10,7 @@
 
 }
 .chatbox-up {
-    height: 8vh;
+    height: 5vh;
     border-bottom: .3vh solid green;
 }
 .chatbox-down {
@@ -29,6 +29,10 @@
 }
 .chatbox-right-down {
     width: 80vh;
-    height: 15vh;
+    height: 7vh;
 
+}
+.chatbox-right-down input {
+    width: 99%;
+    height:83%;
 }

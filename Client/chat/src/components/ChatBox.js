@@ -6,7 +6,7 @@ const ChatBox = () => {
         <div className="chatbox-wrapper">
             <div className="chatbox-container">
                 <div className="chatbox-up">
-
+                    <h3>My Chatbox</h3>
                 </div>
                 <div className="chatbox-down">
                     <div className="chatbox-left">
@@ -17,7 +17,7 @@ const ChatBox = () => {
 
                         </div>
                         <div className="chatbox-right-down">
-
+                            <input  type="text" placeholder="Write message..." onChange={event => event.target.value}/>
                         </div>
                     </div>
                 </div>
