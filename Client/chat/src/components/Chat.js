@@ -8,7 +8,6 @@ const Chat = ({ location }) => {
     const [ room, setRoom ] = useState('');
     const [ message, setMessage ] = useState('');
     const [ messages, setMessages ] = useState([]);
-    const [ member, setMember ] = useState('')
     const [ members, setMembers ] = useState([]);
     const ENDPOINT = 'localhost:5000';
 
@@ -34,6 +33,7 @@ const Chat = ({ location }) => {
     useEffect(() => {
         socket.on('message', (message) => {
             setMessages([...messages, message])
+            console.log(message)
         })
     },[messages, message]);
 
@@ -48,7 +48,6 @@ const Chat = ({ location }) => {
     //         setMembers([...members, member])
     //     })
     // })
-
     useEffect(() => {
         if (message) {
             socket.emit('sendMessage' , message, () => setMessage(''))
@@ -71,7 +70,7 @@ const Chat = ({ location }) => {
                     />
 
             </div> */}
-            <ChatBox message={message} messages={messages} getNewMessage={getNewMessage} />
+            <ChatBox message={message} messages={messages} getNewMessage={getNewMessage} members={members} />
         </div>
     )
 }

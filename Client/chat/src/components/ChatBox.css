@@ -36,3 +36,9 @@
     width: 99%;
     height:83%;
 }
+.chatbox-left-members {
+    display: flex;
+}
+.chatbox-right-up-chatbox {
+    display: flex;
+}
