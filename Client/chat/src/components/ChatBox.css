@@ -26,6 +26,7 @@
     width: 80vh;
     height: 55vh;
     border-bottom: .3vh solid black;
+    overflow: auto;
 }
 .chatbox-right-down {
     width: 80vh;
@@ -40,5 +41,14 @@
     display: flex;
 }
 .chatbox-right-up-chatbox {
-    display: flex;
+    border: .1vh solid;
+    width: 35vh;
+    background-color: #4dc4c4;
+    border-radius: 1.7vh;
+    margin-left: 2vh;
+    margin-top: 2.5vh;
+    text-align: left;
+}
+.chatbox-right-up-chatbox h4{
+    margin-top: -2vh;
 }
