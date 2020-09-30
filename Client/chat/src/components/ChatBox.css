@@ -4,10 +4,7 @@
     border: .3vh solid black;
     margin: auto;
     /* padding: 10px; */
-    margin-top: 10%;
-}
-.chatbox-container {
-
+    margin-top: 16vh;
 }
 .chatbox-up {
     height: 5vh;
@@ -39,6 +36,7 @@
 }
 .chatbox-left-members {
     display: flex;
+    cursor: pointer;
 }
 .chatbox-right-up-chatbox {
     border: .1vh solid;
@@ -51,4 +49,9 @@
 }
 .chatbox-right-up-chatbox h4{
     margin-top: -2vh;
+    margin-left: 2vh;
+}
+.chatbox-right-up-chatbox p{
+    margin-left: .7vh;
+    margin-top: .5vh;
 }
