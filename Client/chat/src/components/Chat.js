@@ -70,7 +70,7 @@ const Chat = ({ location }) => {
                     />
 
             </div> */}
-            <ChatBox message={message} messages={messages} getNewMessage={getNewMessage} members={members} />
+            <ChatBox message={message} messages={messages} getNewMessage={getNewMessage} members={members} name={name} />
         </div>
     )
 }

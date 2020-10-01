@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import greenCircle from '../Images/green_circle.jpg'
 import './ChatBox.css';
 
-const ChatBox = ({message, messages, getNewMessage, members}) => {
+const ChatBox = ({message, messages, getNewMessage, members, name}) => {
     const [ newMesageText, setNewMessageText ] = useState('')
 
     const sendMessage = (event) => {
@@ -30,9 +30,11 @@ const ChatBox = ({message, messages, getNewMessage, members}) => {
                     </div>
                     <div className ="chatbox-right">
                         <div className="chatbox-right-up">
-                            {messages.map((item, i) => <div key={i} className="chatbox-right-up-chatbox">
-                                <p>{item.user}</p>
-                                <h4>{item.text}</h4>
+                            {messages.map((item, i) => <div key={i} style={ name.toLowerCase() !== item.user ? {backgroundColor:"#4dc4c4"}:{backgroundColor:"#4d52c4", float:"right"} } className="chatbox-right-up-chatbox">
+                                <div>
+                                    <p>{item.user}</p>
+                                    <h4>{item.text}</h4>
+                                </div>
                             </div>)}
                         </div>
                         <div className="chatbox-right-down">
