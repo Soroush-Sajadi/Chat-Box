@@ -1,0 +1,24 @@
+.join-outer-container {
+    margin-top: 30vh;
+}
+.join-input {
+    width: 45vh;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    
+}
+.mt-20 {
+    margin-top: 3vh;
+}
+.join-input:focus {
+    outline: none;
+    border-bottom: 0.4vh solid blueviolet;
+}
+.button {
+    border: none;
+    width: 10vh;
+    height: 4vh;
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
