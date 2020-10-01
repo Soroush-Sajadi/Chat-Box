@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import greenCircle from '../Images/green_circle.jpg'
+import queryString from 'query-string';
+
 import './ChatBox.css';
 
-const ChatBox = ({message, messages, getNewMessage, members, name}) => {
+const ChatBox = ({message, messages, getNewMessage, members, name, room}) => {
     const [ newMesageText, setNewMessageText ] = useState('')
 
     const sendMessage = (event) => {
@@ -21,8 +23,14 @@ const ChatBox = ({message, messages, getNewMessage, members, name}) => {
                         {members.members !== undefined ?
                             members.members.map((member, i) => 
                                 <div className="chatbox-left-members" key={i}>
-                                    <img style={{width:"2vh", height:"1vh", marginTop:"3.8vh"}} src={greenCircle} alt="online" />
-                                    <p>{member.name.name}</p>
+                                    {member.name.room === room ?
+                                    <>
+                                        <img style={{width:"2vh", height:"1vh", marginTop:"3.8vh"}} src={greenCircle} alt="online" />
+                                        <p>{member.name.name}</p>
+                                    </>
+                                    :
+                                    null
+                                    }
                                     </div>)
                             :
                             null
