@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import greenCircle from '../Images/green_circle.jpg'
+import unknown from '../Images/unknow.png'
 import queryString from 'query-string';
 
 import './ChatBox.css';
@@ -25,7 +25,7 @@ const ChatBox = ({message, messages, getNewMessage, members, name, room}) => {
                                 <div className="chatbox-left-members" key={i}>
                                     {member.name.room === room ?
                                     <>
-                                        <img style={{width:"2vh", height:"1vh", marginTop:"3.8vh"}} src={greenCircle} alt="online" />
+                                        <img  src={unknown} alt="online" />
                                         <p>{member.name.name}</p>
                                     </>
                                     :

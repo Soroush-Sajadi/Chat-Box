@@ -46,6 +46,12 @@
     display: flex;
     cursor: pointer;
 }
+.chatbox-left-members img {
+    width: 5vh;
+    height: 5vh;
+    margin-top: 1.5vh;
+    border-radius: 50%;
+}
 .chatbox-right-up-chatbox {
     border: .1vh solid;
     width: 35vh;
