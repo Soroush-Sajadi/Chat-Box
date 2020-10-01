@@ -14,7 +14,7 @@ const ChatBox = ({message, messages, getNewMessage, members}) => {
         <div className="chatbox-wrapper">
             <div className="chatbox-container">
                 <div className="chatbox-up">
-                    <h3>My Chatbox</h3>
+                    chatbox
                 </div>
                 <div className="chatbox-down">
                     <div className="chatbox-left">

@@ -7,8 +7,12 @@
     margin-top: 16vh;
 }
 .chatbox-up {
-    height: 5vh;
-    border-bottom: .3vh solid green;
+    height: 7.7vh;
+    background-color: cornflowerblue;
+    font-size: 5vh;
+    text-align: left;
+    margin-left: 29.8vh;
+
 }
 .chatbox-down {
     display: flex;
@@ -17,7 +21,7 @@
 .chatbox-left {
     width: 30vh;
     height: 62vh;
-    border-right: .3vh solid red;
+    border-right: .3vh solid black;
 }
 .chatbox-right-up{
     width: 80vh;
@@ -32,7 +36,12 @@
 }
 .chatbox-right-down input {
     width: 99%;
-    height:83%;
+    height:89%;
+    border: none
+}
+.chatbox-right-down input:focus {
+    outline: none;
+    border-bottom: .5vh solid cornflowerblue
 }
 .chatbox-left-members {
     display: flex;
